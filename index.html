@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chetanya | Portfolio</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ===== BASIC ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #050b14;
+    color: white;
+}
+
+/* ===== INTRO ===== */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+    cursor: pointer;
+}
+
+#intro span {
+    font-size: 22px;
+    font-weight: 300;
+    color: white;
+    letter-spacing: 3px;
+    opacity: 0.8;
+
+    animation: fade 2.5s infinite alternate;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to   { opacity: 0.9; }
+}
+
+#main {
+    display: none;
+}
+
+/* ===== HERO ===== */
+
+header {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #001f3f, #000);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.profile-pic {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid #00ccff;
+    box-shadow: 0 0 25px #00ccff;
+
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    color: #00ccff;
+}
+
+header p {
+    max-width: 700px;
+    color: #aaa;
+    font-size: 18px;
+}
+
+/* ===== MENU ===== */
+
+.menu {
+    margin-top: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    margin: 8px;
+}
+
+.menu button {
+    background: transparent;
+    color: #00ccff;
+
+    border: 2px solid #00ccff;
+    padding: 12px 24px;
+
+    font-size: 16px;
+    border-radius: 30px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu button:hover {
+    background: #00ccff;
+    color: black;
+    box-shadow: 0 0 15px #00ccff;
+}
+
+/* ===== SECTIONS ===== */
+
+section {
+    padding: 80px 12%;
+    border-bottom: 1px solid #111;
+}
+
+section h2 {
+    font-size: 32px;
+    color: #00ccff;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* ===== ABOUT ===== */
+
+.card {
+    background: rgba(10,15,25,0.8);
+    border-radius: 15px;
+
+    padding: 30px;
+    max-width: 900px;
+
+    margin: auto;
+
+    box-shadow: 0 0 25px #001f3f;
+}
+
+.card p {
+    color: #ddd;
+    line-height: 1.7;
+    font-size: 17px;
+    text-align: center;
+}
+
+/* ===== FLOATING PANELS ===== */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Panel */
+
+.panel {
+    width: 240px;
+    height: 140px;
+
+    background: linear-gradient(160deg,#03060c,#070f1d);
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    color: white;
+    text-shadow: 0 0 6px #00ccff;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.8);
+
+    transition: 0.4s;
+}
+
+/* Icons */
+
+.panel i {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #7ddcff;
+}
+
+/* Zig-Zag Position */
+
+.panel:nth-child(odd) {
+    transform: translateY(-20px);
+}
+
+.panel:nth-child(even) {
+    transform: translateY(20px);
+}
+
+/* Hover Effect */
+
+.panel:hover {
+    transform: translateY(0) scale(1.08);
+
+    box-shadow:
+        0 0 30px #00ccff55,
+        0 0 60px #001f3f;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: black;
+    text-align: center;
+    padding: 25px;
+    color: gray;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+    section {
+        padding: 60px 8%;
+    }
+
+    .panel {
+        transform: none !important;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- INTRO -->
+
+<div id="intro" onclick="enterSite()">
+    <span>chetanya</span>
+</div>
+
+
+<!-- MAIN -->
+
+<div id="main">
+
+
+<!-- HERO -->
+
+<header>
+
+    <img src="profile.jpg" class="profile-pic">
+
+    <h1>Chetanya</h1>
+
+    <p>
+        From Top Performer to Resilient Dreamer |
+        CSE Student | Future Entrepreneur | Army Aspirant
+    </p>
+
+    <div class="menu">
+
+        <a href="#about"><button>About</button></a>
+        <a href="#social"><button>Social</button></a>
+        <a href="#marks"><button>Marks</button></a>
+        <a href="#resume"><button>Resume</button></a>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="card">
+
+        <p>
+            I am Chetanya, a Computer Science Engineering student who believes in growth through experience.
+            I performed strongly till 10th grade, faced challenges in 12th, and learned valuable lessons.
+        </p>
+
+        <p>
+            I focus on building real-world skills through problem-solving, coding, and self-improvement.
+            My interests include technology, finance, and logical reasoning.
+        </p>
+
+        <p>
+            My long-term goals are to build my own business or serve the nation through the Indian Army.
+            I believe discipline and consistency define success.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SOCIAL -->
+
+<section id="social">
+
+    <h2>Social Media</h2>
+
+    <div class="cards">
+
+        <a href="https://www.instagram.com/chetanya003?igsh=MWh6Mm55bTJtY3JlYg%3D%3D" target="_blank">
+            <div class="panel">
+                <i class="fab fa-instagram"></i>
+                Instagram
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/chetanya-43026b319" target="_blank">
+            <div class="panel">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </div>
+        </a>
+
+        <a href="https://github.com/ItsMeSoul003" target="_blank">
+            <div class="panel">
+                <i class="fab fa-github"></i>
+                GitHub
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- MARKS -->
+
+<section id="marks">
+
+    <h2>Academic Records</h2>
+
+    <div class="cards">
+
+        <a href="10th_marksheet.pdf" target="_blank">
+            <div class="panel">
+                <i class="fas fa-school"></i>
+                Class 10
+            </div>
+        </a>
+
+        <a href="12th_marksheet.pdf" target="_blank">
+            <div class="panel">
+                <i class="fas fa-graduation-cap"></i>
+                Class 12
+            </div>
+        </a>
+
+        <a href="#">
+            <div class="panel">
+                <i class="fas fa-certificate"></i>
+                Certificates
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- RESUME -->
+
+<section id="resume">
+
+    <h2>Resume & Contact</h2>
+
+    <div class="cards">
+
+        <a href="resume.pdf" download>
+            <div class="panel">
+                <i class="fas fa-file-pdf"></i>
+                Download CV
+            </div>
+        </a>
+
+        <a href="mailto:chetanya393@gmail.com">
+            <div class="panel">
+                <i class="fas fa-envelope"></i>
+                Email Me
+            </div>
+        </a>
+
+        <a href="#about">
+            <div class="panel">
+                <i class="fas fa-user"></i>
+                Profile
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 | Chetanya | Built with Passion 💙
+</footer>
+
+
+</div>
+
+
+<!-- SCRIPT -->
+
+<script>
+
+function enterSite() {
+
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("main").style.display = "block";
+
+}
+
+</script>
+
+
+</body>
+</html>
